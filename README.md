@@ -28,7 +28,7 @@ The code is at below
 
    colnames(subject) <- make.names(c("Subject"),unique = TRUE) #make unique col name for subject
 
-   complete<-cbind(subject,y_full$Y,data) #finally a full clean data set 
+   complete<-cbind(subject,y_full,data) #finally a full clean data set 
 
 5. qu2<- complete[grep("mean|std|Subject|Activity", names(complete))] # to extract all the mean() and std()
 
