@@ -1,5 +1,7 @@
 # Data-Cleaning-Final-Assignment
 
+My name is Alex and welcome to come here and rate my project, thank you.
+
 ###############################
 	setwd("G:/Data/UCI HAR Dataset")
 	library(dplyr)
