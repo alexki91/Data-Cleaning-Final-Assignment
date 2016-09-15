@@ -1,8 +1,8 @@
 # Data-Cleaning-Final-Assignment
 
 ###############################
-setwd("G:/Data/UCI HAR Dataset")
-library(dplyr)
+	setwd("G:/Data/UCI HAR Dataset")
+	library(dplyr)
 ###############################
 
 First Step: to read all the essential tables
