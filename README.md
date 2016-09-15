@@ -37,24 +37,24 @@ Third Step: to merge x,y for both test and train
     
 Fourth Step: before we go to final cleanest data, we are going to look for the pattern of every single hearder in order to spot the correct column which require from the question
 
-abc <- grep(pattern = "[aA][Mm][Ee][Nn]|[Tt][Dd][Ss]", x = names(complete_yet)) #pull a list of of the elements pattern
-sub <-complete_yet[,abc]
-sub1 <-grep(pattern = "gravityMean|tBodyAccMean|meanFreq", x = names(sub))
-
-sub <- select(sub, -c(sub1)) # to gerante the clean data
+	abc <- grep(pattern = "[aA][Mm][Ee][Nn]|[Tt][Dd][Ss]", x = names(complete_yet)) #pull a list of of the elements pattern
+	sub <-complete_yet[,abc]
+	sub1 <-grep(pattern = "gravityMean|tBodyAccMean|meanFreq", x = names(sub))
+	
+	sub <- select(sub, -c(sub1)) # to gerante the clean data
 
 Fifth Step: to match the numbers and the activity desciprtiosn then replace the numbers to the descirption
 
-def = 1
-while (def <= length(labels1)){complete_yet$Activity[complete_yet$Activity == def] <- labels1[def]; def = def + 1 }
+	def = 1
+	while (def <= length(labels1)){complete_yet$Activity[complete_yet$Activity == def] <- labels1[def]; def = def + 1 }
 
 Final Step:
 
-final <- complete_yet %>% group_by(Activity) %>% summarize_all(.,funs(mean)) # to make sumamry table of each varaibles by activity label
+	final <- complete_yet %>% group_by(Activity) %>% summarize_all(.,funs(mean)) # to make sumamry table of each varaibles by activity label
 
 Then write it out:
 
-write.table(final, "G:/Data/UCI HAR Dataset/final_baby.txt", sep="\t") # :)
+	write.table(final, "G:/Data/UCI HAR Dataset/final_baby.txt", sep="\t") # :)
 
 
 
