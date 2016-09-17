@@ -16,29 +16,36 @@ First Step: to read all the essential tables (Question 1)
 	x_train <- read.table("./train/X_train.txt", header = FALSE) # load x train.txt
 	y_train <- read.table("./train/y_train.txt", header = FALSE) #load y train.txt
 	subject_train <- read.table("./train/subject_train.txt", header = FALSE) #load y subject train
-	   
-	feature <- read.table("./features.txt", header = FALSE) #load feature.txt
-	feature1 <- as.character(feature$V2) # to store as a list
-	labels <- read.table("./activity_labels.txt", header = FALSE) #load labels.txt
-	labels <- labels[,2] # store as a list
-	labels <- as.character(labels) #to store list
-   
-Second Step: to change the variable name (Question 1)
-
-	colnames(x_test) <- make.names(feature$V2,unique = TRUE) #make unique col name for x.test
-	colnames(x_train) <- make.names(feature$V2,unique = TRUE) #make unique col name for x.train
 	
-	colnames(y_test) <- make.names(c("Activity"),unique = TRUE) #make unique col name for y.test
-	colnames(y_train) <- make.names(c("Activity"),unique = TRUE) #make unique col name for y.train
-    
-Third Step: to merge x,y for both test and train (Question 1)
+	feature <- read.table("./features.txt", header = FALSE) #load feature.txt
+	labels <- read.table("./activity_labels.txt", header = FALSE) #load labels.txt
+	labels1 <- labels[,2] 
+	labels1 <- as.character(labels1) #to store as a list for question 3
+   
+Second Step: combine all the data
 
-	train <- cbind(y_test,x_test) #combine y,x test
-	test <- cbind(y_train,x_train) #combie y,x train
-	    
-	complete_yet <- rbind(train,test) #merge train and test data
+	subject <- rbind(subject_train,subject_test)  
+	activity <- rbind(y_train,y_test)
+	main <- rbind(x_train,x_test)
     
-Fourth Step: before we go to final cleanest data, we are going to look for the pattern of every single hearder in order to spot the correct column which require from the question  (Question 2)
+Third Step: Rename subject,activity and main data and combine all data'
+
+	colnames(subject) <- make.names(c("Subject"),unique = TRUE)
+	colnames(activity) <- make.names(c("Activity"),unique = TRUE)
+	
+	names(main) <- feature$V2
+	
+	complete <- cbind(subject,activity)
+	complete1 <- cbind(complete,main)
+
+
+
+
+	
+Match all the feature and only taken sutiable keywords "mean()" and "std()" and tag back the activity to the sutiable clas
+	    
+	    
+Fourth Step: Match all the feature and only taken sutiable keywords "mean()" and "std()" and tag back the activity to the sutiable clas
 
 	abc <- grep(pattern = "[aA][Mm][Ee][Nn]|[Tt][Dd][Ss]", x = names(complete_yet)) #pull a list of of the elements pattern
 	sub <-complete_yet[,abc]
