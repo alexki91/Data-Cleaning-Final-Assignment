@@ -1,20 +1,15 @@
-FCode Book
+This is the code book for the Data Cleaning Final Assignment
 
-This code book summarizes the resulting data fields in tidydata.txt. Identifiers
+Subject is the ID of the test and train subject according to the main data
 
-subject - The ID of the test subject - A total of 30 subjects
-activity - The type of activity performed when the corresponding measurements were taken .
- A total of 6 activities performed. 
-For each subject (out of 30) 68 different measurements (listed under) are taken while performing 6 different activities . Hence a total of 180 observation sets.
+Below are all the Activity Labels:
 
-Activity Labels
-
-WALKING (value 1): subject was walking during the test
-WALKING_UPSTAIRS (value 2): subject was walking up a staircase during the test
-WALKING_DOWNSTAIRS (value 3): subject was walking down a staircase during the test
-SITTING (value 4): subject was sitting during the test
-STANDING (value 5): subject was standing during the test
-LAYING (value 6): subject was laying down during the test
+1 - Walking
+2 - Walking Upstairs
+3 - Walking Downstairs
+4 - Sitting
+5 - Standing
+6 - Lying
 
 Belows are all the measurements:
 
