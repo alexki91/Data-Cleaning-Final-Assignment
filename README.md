@@ -2,6 +2,16 @@
 
 My name is Alex and welcome to come here and rate my project, thank you.
 
+The requirement and main onjectives of this project:
+
+	1. Merges the training and the test sets to create one data set.
+	2. Extracts only the measurements on the mean and standard deviation for each measurement.
+	3. Uses descriptive activity names to name the activities in the data set
+	4. Appropriately labels the data set with descriptive variable names.
+	5. From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each 		   activity and each subject.
+	
+To satisfy all the requirements from above, we need to process the R.script below in order to gerenate the cleanest data and it calls "final_baby_one_more_try"
+
 ###############################
 	setwd("G:/Data/UCI HAR Dataset")
 	library(dplyr)
